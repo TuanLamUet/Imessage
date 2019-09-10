@@ -4,17 +4,13 @@ import ContactModel from "./src/models/contact.model";
 var app = express();
 
 //Connect to mongoDB
-
 ConnectDB();
-
-let hostname = "localhost";
-let port = 8017;
 
 app.get('/test', async (req, res) => {
     try{
         let item = {
-            userId: "27011999",
-            contactID: "2701100017021100",          
+            userID: "27011999",
+            contactID: "2701100017021100"      
         };
         let contact = await ContactModel.createNew(item); 
         res.send(contact);
@@ -22,7 +18,10 @@ app.get('/test', async (req, res) => {
         console.log(err);
     }
 });
+app.get('/',(req,res)=> {
+    res.send('hello');
+});
 
-app.listen(port,hostname, ()=> {
-    console.log("server is running...");
+app.listen(process.env.APP_PORT,process.env.APP_HOST, ()=> {
+    console.log(`server running on ${process.env.APP_HOST}:${process.env.APP_PORT}`);
 });
