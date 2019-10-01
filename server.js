@@ -1,10 +1,15 @@
 import express from "express";
 import ConnectDB from "./src/config/connectDB";
 import ContactModel from "./src/models/contact.model";
+import configViewEngine from "./src/config/viewEngine";
+import initRoutes from "./src/routes/web"
 var app = express();
 
 //Connect to mongoDB
 ConnectDB();
+
+//Config view engine
+configViewEngine(app);
 
 app.get('/test', async (req, res) => {
     try{
@@ -18,10 +23,9 @@ app.get('/test', async (req, res) => {
         console.log(err);
     }
 });
-app.get('/',(req,res)=> {
-    res.send('hello');
-});
 
-app.listen(process.env.APP_PORT,process.env.APP_HOST, ()=> {
-    console.log(`server running on ${process.env.APP_HOST}:${process.env.APP_PORT}`);
+initRoutes(app);
+
+app.listen(30000, ()=> {
+    console.log(`server running....`);
 });
