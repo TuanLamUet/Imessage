@@ -19,10 +19,12 @@
   "homepage": "https://github.com/TuanLamUet/Imessage#readme",
   "dependencies": {
     "bluebird": "^3.5.3",
+    "body-parser": "^1.19.0",
     "braces": ">=2.3.1",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-ejs-extend": "0.0.1",
+    "express-validator": "^6.2.0",
     "mongoose": "^4.13.19"
   },
   "devDependencies": {
