@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node server.js"
+    "start": "babel-node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,14 +18,19 @@
   },
   "homepage": "https://github.com/TuanLamUet/Imessage#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "bluebird": "^3.5.3",
     "body-parser": "^1.19.0",
     "braces": ">=2.3.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.0.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-ejs-extend": "0.0.1",
+    "express-session": "^1.16.2",
     "express-validator": "^6.2.0",
-    "mongoose": "^4.13.19"
+    "mongoose": "^4.13.19",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
