@@ -49,7 +49,6 @@ let verifyAccount = (token) => {
         if(!userByToken) {
             return reject(transErrors.token_undefined);
         }
-        
         await UserModel.verify(token);
         resolve(transSuccess.account_actived);    
     })

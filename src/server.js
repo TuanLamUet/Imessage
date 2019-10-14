@@ -5,7 +5,9 @@ import configViewEngine from "./config/viewEngine";
 import initRoutes from "./routes/web"
 import bodyParser from "body-parser";
 import connectFlash from "connect-flash";
-import configSession from "./config/session"
+import configSession from "./config/session";
+import passport from "passport";
+
 var app = express();
 
 //Connect to mongoDB
@@ -35,6 +37,9 @@ app.get('/test', async (req, res) => {
     }
 });
 
+//Config passport js
+app.use(passport.initialize());
+app.use(passport.session());
 initRoutes(app);
 
 app.listen(30000, ()=> {
